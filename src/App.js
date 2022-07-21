@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import BasicGrid from "./components/basicGrid";
+import Stack from '@mui/material/Stack';
+import Alert from '@mui/material/Alert';
+import DenseAppBar from "./components/header";
 
 function App() {
+  if (typeof window.ethereum === undefined) {
+    return (
+    <Stack sx={{ width: '100%' }} spacing={2}>
+      <Alert severity="error">Ethereum not enabled by browser.</Alert>
+    </Stack>
+    )
+  } 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DenseAppBar></DenseAppBar>
+      <BasicGrid></BasicGrid>
+    </>
+
   );
 }
 

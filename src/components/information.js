@@ -25,6 +25,13 @@ export default function Information() {
     
     fetchMessageAndContributors()
     
+    myContract().events.contributorsUpdate((err, ev) => {
+      fetchMessageAndContributors()
+    })
+
+    myContract().events.newMessage((err, ev) => {
+      fetchMessageAndContributors()
+    })
   }, [])
 
   const handleChange = (_, newValue) => {

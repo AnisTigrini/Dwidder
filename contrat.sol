@@ -75,10 +75,12 @@ contract SocialNetwork {
 
     // 10. Fonction Pour insérer un message dans la blockchain.
     function insertMessage(string memory m) payable public {
+        // CHECKS
         // 10.1 Vérfier que le message est non vide et que l'on paye bien 10 000 gwei.
         require(msg.value == 0.00001 ether, "You need to pay 10 000 Gwei to do this!");
         require(bytes(m).length != 0, "We cannot enter an empty message!");
         
+        // EFFETS
         // 10.2 Mettre le message dans la liste.
         messages.push(m);
 
@@ -91,6 +93,7 @@ contract SocialNetwork {
         uint32 currentNumberOfMessages = authors[msg.sender];
         authors[msg.sender] = isOverflow(currentNumberOfMessages + 1) ? currentNumberOfMessages: currentNumberOfMessages + 1;
 
+        // INTERACTIONS
         // 10.5 Payer à l'auteur du contrat.
         payable(authorAddress).transfer(msg.value);
 

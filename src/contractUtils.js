@@ -27,6 +27,26 @@ export default function myContract() {
         "type": "event"
       },
       {
+        "inputs": [],
+        "name": "destroy",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "m",
+            "type": "string"
+          }
+        ],
+        "name": "insertMessage",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+      },
+      {
         "anonymous": false,
         "inputs": [
           {
@@ -38,13 +58,6 @@ export default function myContract() {
         ],
         "name": "newMessage",
         "type": "event"
-      },
-      {
-        "inputs": [],
-        "name": "destroy",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
       },
       {
         "inputs": [],
@@ -80,19 +93,6 @@ export default function myContract() {
       {
         "inputs": [
           {
-            "internalType": "string",
-            "name": "m",
-            "type": "string"
-          }
-        ],
-        "name": "insertMessage",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
             "internalType": "address",
             "name": "adr",
             "type": "address"
@@ -110,7 +110,7 @@ export default function myContract() {
         "type": "function"
       }
     ]
-
+    
   const contractAddress = "0x77A6840d41259694383fFC8fceCb4Fe443aed7Fe"
   const web3 = new Web3(window.ethereum);
 

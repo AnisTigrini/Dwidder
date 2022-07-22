@@ -111,7 +111,7 @@ export default function myContract() {
       }
     ]
 
-  const contractAddress = "0x9C60E7BcF4F7e152ac61C9b9FA83d2681f8D454D"
+  const contractAddress = "0x77A6840d41259694383fFC8fceCb4Fe443aed7Fe"
   const web3 = new Web3(window.ethereum);
 
   return new web3.eth.Contract(contractABI, contractAddress)
